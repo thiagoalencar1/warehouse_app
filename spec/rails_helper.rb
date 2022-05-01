@@ -31,7 +31,7 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
-  confir.before(type: :system) do
+  config.before(type: :system) do
     driven_by(:rack_test)
   end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
