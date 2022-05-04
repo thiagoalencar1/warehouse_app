@@ -1,24 +1,10 @@
-# README
+# WhareHouse App - Wharehouse & Stock management.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- App maded for learning purpose and refining rails development skills.
 
-Things you may want to cover:
+## Stack:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby 3.1.1
+- Rails 7.0.2.3 (installed with --minimal)
+- SQLite3
+- Tests: RSpec & Capybara
