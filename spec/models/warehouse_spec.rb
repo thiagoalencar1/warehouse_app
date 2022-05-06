@@ -112,7 +112,7 @@ RSpec.describe Warehouse, type: :model do
       # Arrange
       warehouse = Warehouse.new(
         name: 'Salvador', code: 'RIO', address: 'Av. Getúlio Vargas', city: 'Salvador',
-        cep: '00000000', area: 1_000_000, description: 'Bora Baêa!'
+        cep: '00000-0000', area: 1_000_000, description: 'Bora Baêa!'
       )
 
       # Act and Assert
