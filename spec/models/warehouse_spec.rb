@@ -81,7 +81,7 @@ RSpec.describe Warehouse, type: :model do
       end
     end
 
-    it 'false when code is already in use' do
+    it 'falso quando _code_ já está em uso' do
       # Arrange
       warehouse1 = Warehouse.create(
         name: 'Rio', code: 'RIO', address: 'Endereço', city: 'Rio',
@@ -95,6 +95,28 @@ RSpec.describe Warehouse, type: :model do
 
       # Act and Assert
       expect(warehouse2).not_to be_valid
+    end
+
+    it 'verdadeiro quando o formato do _cep_ é 00000-000' do
+      # Arrange
+      warehouse = Warehouse.new(
+        name: 'Salvador', code: 'RIO', address: 'Av. Getúlio Vargas', city: 'Salvador',
+        cep: '40000-000', area: 1_000_000, description: 'Bora Baêa!'
+      )
+
+      # Act and Assert
+      expect(warehouse).to be_valid
+    end
+
+    it 'falso quando o formato do _cep_ não é 00000-000' do
+      # Arrange
+      warehouse = Warehouse.new(
+        name: 'Salvador', code: 'RIO', address: 'Av. Getúlio Vargas', city: 'Salvador',
+        cep: '40000000', area: 1_000_000, description: 'Bora Baêa!'
+      )
+
+      # Act and Assert
+      expect(warehouse).not_to be_valid
     end
   end
 end
