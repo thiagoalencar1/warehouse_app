@@ -1,6 +1,10 @@
 .field_with_errors label {
   color: rgb(255,0,0)
 }
-.field_with_errors input, textarea {
+.field_with_errors input {
+  border-color: rgb(255, 0, 0)
+}
+
+.field_with_errors textarea {
   border-color: rgb(255, 0, 0)
 }
