@@ -25,6 +25,28 @@ RSpec.describe Warehouse, type: :model do
         expect(warehouse).not_to be_valid
       end
 
+      it 'falso quando _code_ for maior que 3 caracteres' do
+        # Arrange
+        warehouse = Warehouse.new(
+          name: 'Rio', code: 'ASWE', address: 'Endereço', city: 'Rio',
+          cep: '25000-000', area: 1000, description: 'Alguma descrição'
+        )
+
+        # Act and Assert
+        expect(warehouse).not_to be_valid
+      end
+
+      it 'falso quando _code_ for menor que 3 caracteres' do
+        # Arrange
+        warehouse = Warehouse.new(
+          name: 'Rio', code: 'AE', address: 'Endereço', city: 'Rio',
+          cep: '25000-000', area: 1000, description: 'Alguma descrição'
+        )
+
+        # Act and Assert
+        expect(warehouse).not_to be_valid
+      end
+
       it 'falso quando _address_ for vazio' do
         # Arrange
         warehouse = Warehouse.new(

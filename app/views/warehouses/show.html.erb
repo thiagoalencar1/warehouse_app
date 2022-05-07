@@ -19,4 +19,5 @@
     <dd><%= @warehouse.address %>. <strong>CEP: </strong> <%= @warehouse.cep %>.</dd>
 </dl>
 </div>
+<%= link_to 'Editar', edit_warehouse_path(@warehouse.id) %>
 <%= link_to 'Voltar', root_path %>
