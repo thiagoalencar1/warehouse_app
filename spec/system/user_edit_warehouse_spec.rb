@@ -10,6 +10,7 @@ describe 'Usuários edita um galpão' do
 
     # Act
     visit root_path
+
     click_on 'Aeroporto SP'
     click_on 'Editar'
 

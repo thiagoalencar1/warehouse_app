@@ -1,16 +1,15 @@
 class WarehousesController < ApplicationController
-  def show
-    @warehouse = Warehouse.find(params[:id])
-  end
+  before_action :set_warehouse, only: %i[show edit update]
+
+  def show; end
 
   def new
     @warehouse = Warehouse.new
   end
 
   def create
-    warehouse_params = params.require(:warehouse).permit(
-      :name, :code, :city, :description, :address, :cep, :area
-    )
+    warehouse_params
+
     @warehouse = Warehouse.new(warehouse_params)
     @warehouse.save
 
@@ -22,16 +21,10 @@ class WarehousesController < ApplicationController
     end
   end
 
-  def edit
-    @warehouse = Warehouse.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @warehouse = Warehouse.find(params[:id])
-
-    warehouse_params = params.require(:warehouse).permit(
-      :name, :code, :city, :description, :address, :cep, :area
-    )
+    warehouse_params
 
     if @warehouse.update(warehouse_params)
       flash[:notice] = 'Galpão atualizado com sucesso.'
@@ -40,5 +33,17 @@ class WarehousesController < ApplicationController
       flash[:alert] = 'Atualização não realizada. Verifique os campos em vermelho.'
       render :edit
     end
+  end
+
+  private
+
+  def set_warehouse
+    @warehouse = Warehouse.find(params[:id])
+  end
+
+  def warehouse_params
+    params.require(:warehouse).permit(
+      :name, :code, :city, :description, :address, :cep, :area
+    )
   end
 end
