@@ -9,12 +9,6 @@ describe 'Usuário acessa detalhes de um fornecedor' do
       email: 'contato@wonka.com', contact_number: '+557133224455'
     )
 
-    Supplier.create!(
-      corporate_name: 'Instituto Xavier para crianças superdotadas', brand_name: 'X-Men', nif: '312645867089',
-      full_address: 'Do lado de minha casa, 14', city: 'Ipiaú', state: 'BA',
-      email: 'contato@xmen.com', contact_number: '+557331183804'
-    )
-
     # Act
     visit root_path
     click_on 'Fornecedores'
