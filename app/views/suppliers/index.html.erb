@@ -1,0 +1,12 @@
+<h2>Fornecedores</h2>
+
+<ul>
+  <% @suppliers.each do |s| %>
+    <li><%= s.brand_name %></li>
+    <li><%= s.city + ' - ' + s.state %></li>
+  <% end %>
+</ul>
+
+<% if @suppliers.empty? %>
+  <p><%= 'Nenhum fornecedor cadastrado.' %></p>
+<% end %>

@@ -10,7 +10,7 @@ RSpec.describe Warehouse, type: :model do
           cep: '25000-000', area: 1000, description: 'Alguma descrição'
         )
 
-        # Act and AssertP
+        # Act and Assert
         expect(warehouse).not_to be_valid
       end
 
