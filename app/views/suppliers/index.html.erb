@@ -2,11 +2,11 @@
 
 <ul>
   <% @suppliers.each do |s| %>
-    <li><%= s.brand_name %></li>
-    <li><%= s.city + ' - ' + s.state %></li>
+    <li><%= link_to s.brand_name, s %></li>
+    <li><%= s.city %> - <%= s.state %></li>
   <% end %>
 </ul>
 
 <% if @suppliers.empty? %>
-  <p><%= 'Nenhum fornecedor cadastrado.' %></p>
+  <p>Nenhum fornecedor cadastrado.</p>
 <% end %>

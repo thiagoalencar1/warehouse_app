@@ -5,7 +5,9 @@ describe 'Usuário acessa o menu de fornecedores' do
     # Arrange
     # Act
     visit root_path
-    click_on 'Fornecedores'
+    within('nav') do
+      click_on 'Fornecedores'
+    end
 
     # Assert
     expect(current_path).to eq suppliers_path
