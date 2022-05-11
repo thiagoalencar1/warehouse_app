@@ -11,7 +11,7 @@ describe 'Usuário acessa detalhes de um Modelo de Produto' do
 
     ProductModel.create!(
       name: 'Monitor UltraWide 29\'', weight: 5290, width: 70, height: 45, depth: 5,
-      sku: 'LG29wk600', supplier:
+      sku: 'LG29wk600-KMJHYT-POD', supplier:
     )
 
     # Act
@@ -39,7 +39,7 @@ describe 'Usuário acessa detalhes de um Modelo de Produto' do
 
     ProductModel.create!(
       name: 'Monitor UltraWide 29\'', weight: 5290, width: 70, height: 45, depth: 5,
-      sku: 'LG29wk600', supplier:
+      sku: 'LG29wk600-KMJHYT-POD', supplier:
     )
 
     # Act

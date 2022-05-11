@@ -18,7 +18,7 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
     fill_in 'Largura', with: 5
     fill_in 'Altura', with: 15
     fill_in 'Profundidade', with: 5
-    fill_in 'SKU', with: 'LGBOOM-45670'
+    fill_in 'SKU', with: 'LGBOOM-45670-1234567'
     select 'LG', from: 'product_model_supplier_id'
     click_on 'Enviar'
 

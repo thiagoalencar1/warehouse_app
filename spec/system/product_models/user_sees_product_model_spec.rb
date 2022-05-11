@@ -23,12 +23,12 @@ describe 'Usuário vê modelos de produtos' do
 
     ProductModel.create!(
       name: 'Monitor UltraWide 29\'', weight: 5290, width: 70, height: 45, depth: 5,
-      sku: 'LG29wk600', supplier:
+      sku: 'LG29wk600-1234-RTGH6', supplier:
     )
 
     ProductModel.create!(
       name: 'Boombox SoundBox', weight: 500, width: 5, height: 15, depth: 5,
-      sku: 'LGBOOM-45670', supplier:
+      sku: 'LGBOOM-45670-876-YTH', supplier:
     )
 
     # Act
