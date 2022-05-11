@@ -5,7 +5,7 @@
 <ul>
   <% @suppliers.each do |s| %>
     <li><%= link_to s.brand_name, s %></li>
-    <li><%= s.city %> - <%= s.state %></li>
+    <ul><li><%= s.city %> - <%= s.state.upcase %></li></ul>
   <% end %>
 </ul>
 

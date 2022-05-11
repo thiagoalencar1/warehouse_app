@@ -20,7 +20,7 @@
 
   <div>
     <%= f.label :nif %>
-    <%= f.text_field :nif %>
+    <%= f.number_field :nif %>
   </div>
 
   <div>
@@ -35,7 +35,7 @@
 
   <div>
     <%= f.label :state %>
-    <%= f.text_field :state %>
+    <%= f.text_field :state, maxlength: 2, size: 2 %>
   </div>
 
   <div>
@@ -45,7 +45,7 @@
 
   <div>
     <%= f.label :contact_number %>
-    <%= f.text_field :contact_number %>
+    <%= f.number_field :contact_number %>
   </div>
 
   <div>
