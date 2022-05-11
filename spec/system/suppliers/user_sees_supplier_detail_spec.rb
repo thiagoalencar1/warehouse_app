@@ -17,8 +17,7 @@ describe 'Usuário acessa detalhes de um fornecedor' do
     # Assert
     expect(page).to have_content('A Fantástica Fábrica de Chocolate')
     expect(page).to have_content('NIF: 0987565343120')
-    expect(page).to have_content('Cidade: Salvador')
-    expect(page).to have_content('Estado: BA')
+    expect(page).to have_content('Cidade/Estado: Salvador - BA')
     expect(page).to have_content('Email: contato@wonka.com')
     expect(page).to have_content('Número de Contato: +557133224455')
   end
