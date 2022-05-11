@@ -1,5 +1,7 @@
 <h1>Modelos de Produtos</h1>
 
+<%= link_to 'Cadastrar Modelo de Produto', new_product_model_path %>
+
 <% @product_models.each do |pm| %>
   <h2><%= link_to pm.name, pm %></h2>
   <dl>

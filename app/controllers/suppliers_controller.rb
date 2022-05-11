@@ -5,9 +5,7 @@ class SuppliersController < ApplicationController
     @suppliers = Supplier.all
   end
 
-  def show
-    @supplier = Supplier.find(params[:id])
-  end
+  def show; end
 
   def new
     @supplier = Supplier.new

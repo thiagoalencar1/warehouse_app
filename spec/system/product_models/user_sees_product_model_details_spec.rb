@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Usuário acessa detalhes de um fornecedor' do
+describe 'Usuário acessa detalhes de um Modelo de Produto' do
   it 'e vê mais informações' do
     # Arrange
     supplier = Supplier.new(
@@ -49,6 +49,6 @@ describe 'Usuário acessa detalhes de um fornecedor' do
     click_on 'Voltar'
 
     # Assert
-    expect(current_path).to eq suppliers_path
+    expect(current_path).to eq product_models_path
   end
 end
