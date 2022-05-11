@@ -1,0 +1,17 @@
+<h1>Modelos de Produtos</h1>
+
+<% @product_models.each do |pm| %>
+  <h2><%= pm.name %></h2>
+  <dl>
+    <dt>SKU</dt>
+    <dd><%= pm.sku %></dd>
+    <dt>Fornecedor</dt>
+    <dd><%= pm.supplier.brand_name %></dd>
+  </dl>
+<% end %>
+
+<% if @product_models.empty? %>
+  <p>Nenhum modelo de produto cadastrado.</p>
+<% end %>
+
+<%= link_to 'Voltar', root_path %>
