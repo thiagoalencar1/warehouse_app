@@ -9,7 +9,7 @@ pt-BR:
         name: "Nome"
         code: "Código"
         description: "Descrição"
-        cep: "CEP"
+        postal_code: "CEP"
         address: "Endereço"
         city: "Cidade"
         area: "Área"

@@ -1,4 +1,6 @@
 class Supplier < ApplicationRecord
+  has_many :product_models
+
   validates :corporate_name, :brand_name, :email, :nif, presence: true
   validates :nif, uniqueness: true
   validates :nif, length: { is: 13, message: 'deve ter 13 digitos.' }

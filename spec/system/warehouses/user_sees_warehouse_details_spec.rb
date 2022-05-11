@@ -6,7 +6,7 @@ describe 'Vê detalhes de um galpão' do
     Warehouse.create(
       name: 'Aeroporto SP', code: 'GRU',
       city: 'Guarulhos', area: 100_000,
-      address: 'Avenida do Aeroporto, 100', cep: '15000-000',
+      address: 'Avenida do Aeroporto, 100', postal_code: '15000-000',
       description: 'Galpão destinado a cargas internacionais'
     )
 
@@ -29,7 +29,7 @@ describe 'Vê detalhes de um galpão' do
     Warehouse.create(
       name: 'Aeroporto SP', code: 'GRU',
       city: 'Guarulhos', area: 100_000,
-      address: 'Avenida do Aeroporto, 100', cep: '15000-000',
+      address: 'Avenida do Aeroporto, 100', postal_code: '15000-000',
       description: 'Galpão destinado a cargas internacionais'
     )
 

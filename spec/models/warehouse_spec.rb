@@ -7,7 +7,7 @@ RSpec.describe Warehouse, type: :model do
         # Arrange
         warehouse = Warehouse.new(
           name: '', code: 'RIO', address: 'Endereço', city: 'Rio',
-          cep: '25000-000', area: 1000, description: 'Alguma descrição'
+          postal_code: '25000-000', area: 1000, description: 'Alguma descrição'
         )
 
         # Act and Assert
@@ -18,7 +18,7 @@ RSpec.describe Warehouse, type: :model do
         # Arrange
         warehouse = Warehouse.new(
           name: 'Rio', code: '', address: 'Endereço', city: 'Rio',
-          cep: '25000-000', area: 1000, description: 'Alguma descrição'
+          postal_code: '25000-000', area: 1000, description: 'Alguma descrição'
         )
 
         # Act and Assert
@@ -29,7 +29,7 @@ RSpec.describe Warehouse, type: :model do
         # Arrange
         warehouse = Warehouse.new(
           name: 'Rio', code: 'ASWE', address: 'Endereço', city: 'Rio',
-          cep: '25000-000', area: 1000, description: 'Alguma descrição'
+          postal_code: '25000-000', area: 1000, description: 'Alguma descrição'
         )
 
         # Act and Assert
@@ -40,7 +40,7 @@ RSpec.describe Warehouse, type: :model do
         # Arrange
         warehouse = Warehouse.new(
           name: 'Rio', code: 'AE', address: 'Endereço', city: 'Rio',
-          cep: '25000-000', area: 1000, description: 'Alguma descrição'
+          postal_code: '25000-000', area: 1000, description: 'Alguma descrição'
         )
 
         # Act and Assert
@@ -51,7 +51,7 @@ RSpec.describe Warehouse, type: :model do
         # Arrange
         warehouse = Warehouse.new(
           name: 'Rio', code: 'RIO', address: '', city: 'Rio',
-          cep: '25000-000', area: 1000, description: 'Alguma descrição'
+          postal_code: '25000-000', area: 1000, description: 'Alguma descrição'
         )
 
         # Act and Assert
@@ -62,18 +62,18 @@ RSpec.describe Warehouse, type: :model do
         # Arrange
         warehouse = Warehouse.new(
           name: 'Rio', code: 'RIO', address: 'Endereço', city: '',
-          cep: '25000-000', area: 1000, description: 'Alguma descrição'
+          postal_code: '25000-000', area: 1000, description: 'Alguma descrição'
         )
 
         # Act and Assert
         expect(warehouse).not_to be_valid
       end
 
-      it 'falso quando _cep_ for vazio' do
+      it 'falso quando _postal_code_ for vazio' do
         # Arrange
         warehouse = Warehouse.new(
           name: 'Rio', code: 'RIO', address: 'Endereço', city: 'Rio',
-          cep: '', area: 1000, description: 'Alguma descrição'
+          postal_code: '', area: 1000, description: 'Alguma descrição'
         )
 
         # Act and Assert
@@ -84,7 +84,7 @@ RSpec.describe Warehouse, type: :model do
         # Arrange
         warehouse = Warehouse.new(
           name: 'Rio', code: 'RIO', address: 'Endereço', city: 'Rio',
-          cep: '25000-000', area: nil, description: 'Alguma descrição'
+          postal_code: '25000-000', area: nil, description: 'Alguma descrição'
         )
 
         # Act and Assert
@@ -95,7 +95,7 @@ RSpec.describe Warehouse, type: :model do
         # Arrange
         warehouse = Warehouse.new(
           name: 'Rio', code: 'RIO', address: 'Endereço', city: 'Rio',
-          cep: '25000-000', area: 1000, description: ''
+          postal_code: '25000-000', area: 1000, description: ''
         )
 
         # Act and Assert
@@ -107,34 +107,34 @@ RSpec.describe Warehouse, type: :model do
       # Arrange
       warehouse1 = Warehouse.create(
         name: 'Rio', code: 'RIO', address: 'Endereço', city: 'Rio',
-        cep: '25000-000', area: 1000, description: 'Alguma descrição'
+        postal_code: '25000-000', area: 1000, description: 'Alguma descrição'
       )
 
       warehouse2 = Warehouse.new(
         name: 'Salvador', code: 'RIO', address: 'Av. Getúlio Vargas', city: 'Salvador',
-        cep: '40000-000', area: 1_000_000, description: 'Bora Baêa!'
+        postal_code: '40000-000', area: 1_000_000, description: 'Bora Baêa!'
       )
 
       # Act and Assert
       expect(warehouse2).not_to be_valid
     end
 
-    it 'verdadeiro quando o formato do _cep_ é 00000-000' do
+    it 'verdadeiro quando o formato do _postal_code_ é 00000-000' do
       # Arrange
       warehouse = Warehouse.new(
         name: 'Salvador', code: 'RIO', address: 'Av. Getúlio Vargas', city: 'Salvador',
-        cep: '40000-000', area: 1_000_000, description: 'Bora Baêa!'
+        postal_code: '40000-000', area: 1_000_000, description: 'Bora Baêa!'
       )
 
       # Act and Assert
       expect(warehouse).to be_valid
     end
 
-    it 'falso quando o formato do _cep_ não é 00000-000' do
+    it 'falso quando o formato do _postal_code_ não é 00000-000' do
       # Arrange
       warehouse = Warehouse.new(
         name: 'Salvador', code: 'RIO', address: 'Av. Getúlio Vargas', city: 'Salvador',
-        cep: '00000-0000', area: 1_000_000, description: 'Bora Baêa!'
+        postal_code: '00000-0000', area: 1_000_000, description: 'Bora Baêa!'
       )
 
       # Act and Assert

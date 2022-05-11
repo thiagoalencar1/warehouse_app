@@ -4,7 +4,7 @@ describe 'Usuário remove um galpão' do
   it 'com sucesso' do
     # Arrange
     warehouse = Warehouse.create!(
-      name: 'Cuiabá', code: 'CWB', city: 'Cuiabá', area: 10_000, cep: '56000-000',
+      name: 'Cuiabá', code: 'CWB', city: 'Cuiabá', area: 10_000, postal_code: '56000-000',
       address: 'Avenida dos Jacarés, 1000', description: 'Galpão no centro do país'
     )
 
@@ -23,12 +23,12 @@ describe 'Usuário remove um galpão' do
   it 'não apaga outros galpões' do
     # Arrange
     warehouse1 = Warehouse.create!(
-      name: 'Cuiabá', code: 'CWB', city: 'Cuiabá', area: 10_000, cep: '56000-000',
+      name: 'Cuiabá', code: 'CWB', city: 'Cuiabá', area: 10_000, postal_code: '56000-000',
       address: 'Avenida dos Jacarés, 1000', description: 'Galpão no centro do país'
     )
     warehouse1 = Warehouse.create!(
       name: 'Belo Horizonte', code: 'BHZ', city: 'Belo Horizonte', area: 20_000,
-      cep: '46000-000', address: 'Avenida Tiradentes, 42',
+      postal_code: '46000-000', address: 'Avenida Tiradentes, 42',
       description: 'Galpão no centro do país'
     )
 

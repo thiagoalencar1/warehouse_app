@@ -4,7 +4,7 @@ describe 'Usuários edita um galpão' do
   it 'a partir da página de detalhes' do
     # Arrange
     warehouse = Warehouse.create!(
-      name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000, cep: '15000-000',
+      name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000, postal_code: '15000-000',
       address: 'Avenida do Aeroporto, 100', description: 'Galpão destinado a cargas internacionais'
     )
 
@@ -27,7 +27,7 @@ describe 'Usuários edita um galpão' do
   it 'com sucesso' do
     # Arrange
     warehouse = Warehouse.create!(
-      name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000, cep: '15000-000',
+      name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000, postal_code: '15000-000',
       address: 'Avenida do Aeroporto, 100', description: 'Galpão destinado a cargas internacionais'
     )
 
@@ -54,7 +54,7 @@ describe 'Usuários edita um galpão' do
   it 'sem sucesso' do
     # Arrange
     warehouse = Warehouse.create!(
-      name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000, cep: '15000-000',
+      name: 'Aeroporto SP', code: 'GRU', city: 'Guarulhos', area: 100_000, postal_code: '15000-000',
       address: 'Avenida do Aeroporto, 100', description: 'Galpão destinado a cargas internacionais'
     )
 
