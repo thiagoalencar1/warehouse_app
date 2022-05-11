@@ -1,0 +1,23 @@
+<h2><%= @product_model.name %></h2>
+<dl>
+  <dt>Peso</dt>
+  <dd><%= format('%.3f', @product_model.weight.to_f / 1000).gsub('.',',') %> kg</dd>
+
+  <dt>Largura</dt>
+  <dd><%= @product_model.width %> cm</dd>
+
+  <dt>Altura</dt>
+  <dd><%= @product_model.height %> cm</dd>
+
+  <dt>Profundidade</dt>
+  <dd><%= @product_model.depth %> cm</dd>
+
+  <dt>SKU</dt>
+  <dd><%= @product_model.sku %> cm</dd>
+
+  <dt>Fornecedor</dt>
+  <dd><%= @product_model.supplier.brand_name %></dd>
+
+</dl>
+
+<%= link_to 'Voltar', product_models_path %>

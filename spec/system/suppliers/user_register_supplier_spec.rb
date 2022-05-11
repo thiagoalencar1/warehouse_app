@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Usuário registra um novo fornecedor' do
+describe 'Usuário cadastra um novo fornecedor' do
   it 'com sucesso' do
     # Arrange
     # Act
