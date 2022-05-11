@@ -16,7 +16,7 @@ class WarehousesController < ApplicationController
     if @warehouse.save
       redirect_to root_path, notice: 'Galpão cadastrado com sucesso.'
     else
-      flash.now[:alert] = 'Todos campos devem ser preenchidos.'
+      flash.now[:alert] = 'Todos campos devem ser preenchidos corretamente.'
       render :new
     end
   end

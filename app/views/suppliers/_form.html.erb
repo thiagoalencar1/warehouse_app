@@ -1,3 +1,12 @@
+<% if @supplier.errors.any? %>
+  <p>Verifique os erros abaixo: </p>
+  <ul>
+  <% @supplier.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_with(model: @supplier) do |f| %>
   <div>
     <%= f.label :corporate_name %>
@@ -31,7 +40,7 @@
 
   <div>
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
 
   <div>
@@ -44,3 +53,5 @@
   </div>
 
 <% end %>
+
+<%= link_to 'Voltar', suppliers_path %>

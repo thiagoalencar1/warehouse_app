@@ -52,6 +52,6 @@ describe 'Usuário cadastra um galpão' do
     click_on 'Enviar'
 
     # Assert
-    expect(page).to have_content('Todos campos devem ser preenchidos.')
+    expect(page).to have_content('Todos campos devem ser preenchidos corretamente.')
   end
 end

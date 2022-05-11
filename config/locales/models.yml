@@ -13,7 +13,7 @@ pt-BR:
         city: "Cidade"
         area: "Área"
       supplier:
-        corporate_name: "Nome Corporativo"
+        corporate_name: "Razão Social"
         brand_name: "Nome Fantasia"
         nif: "NIF"
         full_address: "Endereço Completo"
