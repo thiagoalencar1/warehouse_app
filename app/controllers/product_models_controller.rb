@@ -8,6 +8,7 @@ class ProductModelsController < ApplicationController
 
   def new
     @product_model = ProductModel.new
+    @suppliers = Supplier.all
   end
 
   def create
@@ -17,7 +18,7 @@ class ProductModelsController < ApplicationController
     @product_model.save
 
     if @product_model.save
-      redirect_to product_models_path, notice: 'Modelo de Produto cadastrado com sucesso.'
+      redirect_to @product_model, notice: 'Modelo de Produto cadastrado com sucesso.'
     else
       flash.now[:alert] = 'Todos campos devem ser preenchidos corretamente.'
       render :new

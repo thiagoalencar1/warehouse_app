@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      supplier: "Fornecedor"
+    attributes:
+      supplier:
+        corporate_name: "Razão Social"
+        brand_name: "Nome Fantasia"
+        nif: "NIF"
+        full_address: "Endereço Completo"
+        city: "Cidade"
+        state: "Estado"
+        email: "Email"
+        contact_number: "Número de Contato"

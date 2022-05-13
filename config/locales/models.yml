@@ -1,32 +1,4 @@
 pt-BR:
   activerecord:
     models:
-      warehouse: "Galpão"
-      supplier: "Fornecedor"
-      product_model: "Modelo de Produto"
     attributes:
-      warehouse:
-        name: "Nome"
-        code: "Código"
-        description: "Descrição"
-        postal_code: "CEP"
-        address: "Endereço"
-        city: "Cidade"
-        area: "Área"
-      supplier:
-        corporate_name: "Razão Social"
-        brand_name: "Nome Fantasia"
-        nif: "NIF"
-        full_address: "Endereço Completo"
-        city: "Cidade"
-        state: "Estado"
-        email: "Email"
-        contact_number: "Número de Contato"
-      product_model:
-        name: "Nome"
-        weight: "Peso"
-        width: "Largura"
-        height: "Altura"
-        depth: "Profundidade"
-        sku: "SKU"
-        supplier: "Fornecedor"

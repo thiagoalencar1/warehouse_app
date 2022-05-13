@@ -39,8 +39,8 @@
   </div>
 
   <div>
-    <%= f.label :supplier %>
-    <%= f.collection_select :supplier_id, Supplier.all.order(:brand_name), :id, :brand_name %>
+    <%= f.label :supplier_id %>
+    <%= f.collection_select :supplier_id, @suppliers, :id, :brand_name %>
   </div>
 
   <div>

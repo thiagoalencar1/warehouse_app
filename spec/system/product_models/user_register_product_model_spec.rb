@@ -19,12 +19,17 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
     fill_in 'Altura', with: 15
     fill_in 'Profundidade', with: 5
     fill_in 'SKU', with: 'LGBOOM-45670-1234567'
-    select 'LG', from: 'product_model_supplier_id'
+    select 'LG', from: 'Fornecedor'
     click_on 'Enviar'
 
     # Assert
-    expect(current_path).to eq product_models_path
+    expect(current_path).to eq product_model_path(ProductModel.last)
     expect(page).to have_content('Modelo de Produto cadastrado com sucesso.')
     expect(page).to have_content('Boombox SoundBox')
+    expect(page).to have_content('Peso: 0,500 kg')
+    expect(page).to have_content('Altura: 15 cm')
+    expect(page).to have_content('Largura: 5 cm')
+    expect(page).to have_content('SKU: LGBOOM-45670-1234567')
+    expect(page).to have_content('Fornecedor: LG')
   end
 end
