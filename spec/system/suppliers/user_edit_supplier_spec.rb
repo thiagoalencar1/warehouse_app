@@ -4,7 +4,7 @@ describe 'Usuário edita um fornecedor' do
   it 'com sucesso' do
     # Arrange
     Supplier.create!(
-      corporate_name: 'A Fantástica Fábrica de Chocolate', brand_name: 'Indústrias Wonka', nif: '0987565343120',
+      corporate_name: 'A Fantástica Fábrica de Chocolate', brand_name: 'Indústrias Wonka', nif: '09875653431200',
       full_address: 'Do lado de minha casa, 14', city: 'Salvador', state: 'BA',
       email: 'contato@wonka.com', contact_number: '+557133224455'
     )
@@ -30,7 +30,7 @@ describe 'Usuário edita um fornecedor' do
   it 'sem sucesso' do
     # Arrange
     Supplier.create!(
-      corporate_name: 'A Fantástica Fábrica de Chocolate', brand_name: 'Indústrias Wonka', nif: '0987565343120',
+      corporate_name: 'A Fantástica Fábrica de Chocolate', brand_name: 'Indústrias Wonka', nif: '09875653431200',
       full_address: 'Do lado de minha casa, 14', city: 'Salvador', state: 'BA',
       email: 'contato@wonka.com', contact_number: '+557133224455'
     )

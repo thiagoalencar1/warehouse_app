@@ -3,10 +3,16 @@ require 'rails_helper'
 describe 'Usuário cadastra um novo Modelo de Produto' do
   it 'com sucesso' do
     # Arrange
-    Supplier.create!(
-      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '1234567890129',
+    supplier1 = Supplier.create!(
+      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
       full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
-      email: 'vemnimim@lg.com', contact_number: '123456789'
+      email: 'sac@lg.com', contact_number: '123456789'
+    )
+
+    supplier2 = Supplier.create!(
+      brand_name: 'Apple', corporate_name: 'Apple Inc.', nif: '00011122233344',
+      full_address: 'Av 19 de outubro', city: 'Ipiaú', state: 'BA',
+      email: 'sac@apple.com', contact_number: '123456789'
     )
 
     # Act
@@ -23,7 +29,7 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
     click_on 'Enviar'
 
     # Assert
-    expect(current_path).to eq product_model_path(ProductModel.last)
+    expect(current_path).to eq product_model_path(supplier1.id)
     expect(page).to have_content('Modelo de Produto cadastrado com sucesso.')
     expect(page).to have_content('Boombox SoundBox')
     expect(page).to have_content('Peso: 0,500 kg')

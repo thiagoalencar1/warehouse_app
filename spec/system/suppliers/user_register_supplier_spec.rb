@@ -9,7 +9,7 @@ describe 'Usuário cadastra um novo fornecedor' do
     click_on 'Cadastrar Fornecedor'
     fill_in 'Razão Social', with: 'A Fantástica Fábrica de Chocolate'
     fill_in 'Nome Fantasia', with: 'A Fantástica Fábrica de Chocolate'
-    fill_in 'NIF', with: '1234567890123'
+    fill_in 'NIF', with: '12345678901230'
     fill_in 'Cidade', with: 'Salvador'
     fill_in 'Estado', with: 'BA'
     fill_in 'Email', with: 'contato@wonka.com'

@@ -16,7 +16,7 @@ describe 'Usuário vê modelos de produtos' do
   it 'com sucesso' do
     # Arrange
     supplier = Supplier.new(
-      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '1234567890129',
+      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
       full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
       email: 'vemnimim@lg.com', contact_number: '123456789'
     )

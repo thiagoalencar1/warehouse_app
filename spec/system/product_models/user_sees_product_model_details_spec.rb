@@ -4,7 +4,7 @@ describe 'Usuário acessa detalhes de um Modelo de Produto' do
   it 'e vê mais informações' do
     # Arrange
     supplier = Supplier.new(
-      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '1234567890129',
+      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
       full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
       email: 'vemnimim@lg.com', contact_number: '123456789'
     )
@@ -32,7 +32,7 @@ describe 'Usuário acessa detalhes de um Modelo de Produto' do
   it 'e volta para a lista de Modelos de Produto' do
     # Arrange
     supplier = Supplier.new(
-      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '1234567890129',
+      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
       full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
       email: 'vemnimim@lg.com', contact_number: '123456789'
     )
