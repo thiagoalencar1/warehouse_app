@@ -11,7 +11,7 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
 
     supplier2 = Supplier.create!(
       brand_name: 'Apple', corporate_name: 'Apple Inc.', nif: '00011122233344',
-      full_address: 'Av 19 de outubro', city: 'Ipiaú', state: 'BA',
+      full_address: 'Av. 19 de outubro', city: 'Ipiaú', state: 'BA',
       email: 'sac@apple.com', contact_number: '123456789'
     )
 
@@ -37,5 +37,25 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
     expect(page).to have_content('Largura: 5 cm')
     expect(page).to have_content('SKU: LGBOOM-45670-1234567')
     expect(page).to have_content('Fornecedor: LG')
+  end
+
+  it 'deve preencher todos os campos' do
+    # Arrange
+    Supplier.create!(
+      brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
+      full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
+      email: 'sac@lg.com', contact_number: '123456789'
+    )
+
+    # Act
+    visit root_path
+    click_on 'Modelos de Produto'
+    click_on 'Cadastrar Modelo de Produto'
+    fill_in 'Nome', with: ''
+    fill_in 'SKU', with: ''
+    click_on 'Enviar'
+
+    # Assert
+    expect(page).to have_content('Todos campos devem ser preenchidos corretamente.')
   end
 end

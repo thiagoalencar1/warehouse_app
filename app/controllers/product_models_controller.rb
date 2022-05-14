@@ -20,6 +20,7 @@ class ProductModelsController < ApplicationController
     if @product_model.save
       redirect_to @product_model, notice: 'Modelo de Produto cadastrado com sucesso.'
     else
+      @suppliers = Supplier.all
       flash.now[:alert] = 'Todos campos devem ser preenchidos corretamente.'
       render :new
     end
