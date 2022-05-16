@@ -51,8 +51,6 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
     visit root_path
     click_on 'Modelos de Produto'
     click_on 'Cadastrar Modelo de Produto'
-    fill_in 'Nome', with: ''
-    fill_in 'SKU', with: ''
     click_on 'Enviar'
 
     # Assert
