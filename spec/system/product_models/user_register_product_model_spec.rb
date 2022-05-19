@@ -3,6 +3,8 @@ require 'rails_helper'
 describe 'Usuário cadastra um novo Modelo de Produto' do
   it 'com sucesso' do
     # Arrange
+    user = User.create!(name: 'João', email: 'ex@mple.com', password: 'password')
+
     supplier1 = Supplier.create!(
       brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
       full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
@@ -16,6 +18,7 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
     )
 
     # Act
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Modelos de Produto'
     click_on 'Cadastrar Modelo de Produto'
@@ -41,6 +44,8 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
 
   it 'deve preencher todos os campos' do
     # Arrange
+    user = User.create!(name: 'João', email: 'ex@mple.com', password: 'password')
+
     Supplier.create!(
       brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
       full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
@@ -48,6 +53,7 @@ describe 'Usuário cadastra um novo Modelo de Produto' do
     )
 
     # Act
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Modelos de Produto'
     click_on 'Cadastrar Modelo de Produto'

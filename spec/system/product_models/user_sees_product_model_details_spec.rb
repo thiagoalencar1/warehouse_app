@@ -3,6 +3,8 @@ require 'rails_helper'
 describe 'Usuário acessa detalhes de um Modelo de Produto' do
   it 'e vê mais informações' do
     # Arrange
+    user = User.create!(name: 'João', email: 'ex@mple.com', password: 'password')
+
     supplier = Supplier.new(
       brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
       full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
@@ -15,6 +17,7 @@ describe 'Usuário acessa detalhes de um Modelo de Produto' do
     )
 
     # Act
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Modelos de Produtos'
     click_on 'Monitor UltraWide 29\''
@@ -31,6 +34,7 @@ describe 'Usuário acessa detalhes de um Modelo de Produto' do
 
   it 'e volta para a lista de Modelos de Produto' do
     # Arrange
+    user = User.create!(name: 'João', email: 'ex@mple.com', password: 'password')
     supplier = Supplier.new(
       brand_name: 'LG', corporate_name: 'LG Eletronics International', nif: '12345678901290',
       full_address: 'Av Internacional de Greenwich', city: 'Greenwich', state: 'RU',
@@ -43,6 +47,7 @@ describe 'Usuário acessa detalhes de um Modelo de Produto' do
     )
 
     # Act
+    login_as(user, scope: :user)
     visit root_path
     click_on 'Modelos de Produtos'
     click_on 'Monitor UltraWide 29\''
