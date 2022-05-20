@@ -1,6 +1,16 @@
 require 'rails_helper'
 
 describe 'Usuário cadatra um pedido' do
+  it 'e deve estar autenticado' do
+    # Arrange
+    # Act
+    visit root_path
+    click_on 'Registrar Pedido'
+
+    # Assert
+    expect(current_path).to eq new_user_session_path
+  end
+
   it 'com sucesso' do
     # Arrange
     user = User.create!(name: 'Thiago', email: 'thiago@email.com', password: 'baralho')
@@ -31,16 +41,16 @@ describe 'Usuário cadatra um pedido' do
     login_as(user)
     visit root_path
     click_on 'Registrar Pedido'
-    select warehouse.name, from: 'Galpão Destino'
+    select 'GRU - Aeroporto SP', from: 'Galpão Destino'
     select supplier.corporate_name, from: 'Fornecedor'
     fill_in 'Data de Entrega Prevista', with: '20/12/2022'
     click_on 'Gravar'
 
     # Assert
     expect(page).to have_content 'Pedido registrado com sucesso'
-    expect(page).to have_content 'Galpão Destino: Aeroporto SP'
+    expect(page).to have_content 'Galpão Destino: GRU - Aeroporto SP'
     expect(page).to have_content 'Fornecedor: Fábrica de Chocolate LTDA'
-    expect(page).to have_content 'Usuário Responsável: Thiago | thiago@email.com'
+    expect(page).to have_content 'Usuário Responsável: Thiago - thiago@email.com'
     expect(page).to have_content 'Data de Entrega Prevista: 20/12/2022'
     expect(page).not_to have_content 'Cuiabá'
     expect(page).not_to have_content 'CWB'

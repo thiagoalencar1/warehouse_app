@@ -9,7 +9,9 @@
   </head>
   <body>
     <header>
-      <h1>Galpões & Estoque</h1>
+        <%= link_to root_path do %>
+          <h1>Galpões & Estoque</h1>
+        <% end %>
     </header>
     <nav>
       <ul>
@@ -24,7 +26,7 @@
         </li>
         <li>
           <% if user_signed_in? %>
-            <%= current_user.email %>
+            <%= current_user.description %>
             <%= button_to 'Sair', destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to 'Entrar', new_user_session_path %>

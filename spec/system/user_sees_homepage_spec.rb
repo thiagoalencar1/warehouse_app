@@ -5,10 +5,11 @@ describe 'Usuário visita tela inicial' do
     # Arrange
 
     # Act
-    visit('/')
+    visit root_path
 
     # Assert
     expect(page).to have_content('Galpões & Estoque')
+    expect(page).to have_link('Galpões & Estoque', href: root_path)
   end
 
   it 'e vê galpões cadastrados' do
@@ -37,7 +38,7 @@ describe 'Usuário visita tela inicial' do
     # Arrange
 
     # Act
-    visit('/')
+    visit root_path
 
     # Assert
     expect(page).to have_content('Não existem galpões cadastrados')
