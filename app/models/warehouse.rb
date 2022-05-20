@@ -1,4 +1,6 @@
 class Warehouse < ApplicationRecord
+  has_many :orders
+
   validates :name, :code, :city, :description, :address, :postal_code, :area, presence: true
   validates :code, uniqueness: true
   validates :postal_code, format: { with: /\A\d{5}-\d{3}\z/, message: 'com formato inválido.' }

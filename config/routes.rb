@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :warehouses, only: %i[show new create edit update destroy]
   resources :suppliers, only: %i[index show new create edit update]
   resources :product_models, onyl: %i[index show new create]
+  resources :orders, only: %i[new create show]
 end

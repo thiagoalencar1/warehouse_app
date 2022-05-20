@@ -70,7 +70,7 @@ RSpec.describe Supplier, type: :model do
       expect(supplier2).not_to be_valid
     end
 
-    it 'falso quando _nif_ tiver mais ou menos do que 13 caracteres' do
+    it 'falso quando _nif_ tiver mais ou menos do que 14 caracteres' do
       # Arrange
       supplier = Supplier.new(
         corporate_name: 'Fazenda Boa Esperança', brand_name: 'Florafabe', nif: '098756534310',
