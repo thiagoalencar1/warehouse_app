@@ -37,6 +37,9 @@ describe 'Usuário cadatra um pedido' do
       email: 'contato@wonka.com', contact_number: '+557133224455'
     )
 
+    # configuração futura: eu sei que em algum momento o app vai executar o método SecureRandom.alphanumeric
+    allow(SecureRandom).to receive(:alphanumeric).with(8).and_return('ABC12345')
+
     # Act
     login_as(user)
     visit root_path
@@ -48,6 +51,7 @@ describe 'Usuário cadatra um pedido' do
 
     # Assert
     expect(page).to have_content 'Pedido registrado com sucesso'
+    expect(page).to have_content 'Pedido ABC12345'
     expect(page).to have_content 'Galpão Destino: GRU - Aeroporto SP'
     expect(page).to have_content 'Fornecedor: Fábrica de Chocolate LTDA'
     expect(page).to have_content 'Usuário Responsável: Thiago - thiago@email.com'
