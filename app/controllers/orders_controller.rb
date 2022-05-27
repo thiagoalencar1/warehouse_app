@@ -20,4 +20,9 @@ class OrdersController < ApplicationController
     @order.save!
     redirect_to @order, notice: 'Pedido registrado com sucesso.'
   end
+
+  def search
+    @code = params['query']
+    @order = Order.find_by(code: @code)
+  end
 end
