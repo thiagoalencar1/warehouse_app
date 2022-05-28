@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :suppliers, only: %i[index show new create edit update]
   resources :product_models, onyl: %i[index show new create]
 
-  resources :orders, only: %i[new create show] do
+  resources :orders, only: %i[new create show index edit update] do
     get 'search', on: :collection
   end
 end

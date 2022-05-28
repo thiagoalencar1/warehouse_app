@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Usuário cadatra um pedido' do
+describe 'Usuário cadastra um pedido' do
   it 'e deve estar autenticado' do
     # Arrange
     # Act
@@ -46,7 +46,7 @@ describe 'Usuário cadatra um pedido' do
     click_on 'Registrar Pedido'
     select 'GRU - Aeroporto SP', from: 'Galpão Destino'
     select supplier.corporate_name, from: 'Fornecedor'
-    fill_in 'Data de Entrega Prevista', with: '20/12/2022'
+    fill_in 'Data Prevista de Entrega', with: '20/12/2022'
     click_on 'Gravar'
 
     # Assert
@@ -55,7 +55,7 @@ describe 'Usuário cadatra um pedido' do
     expect(page).to have_content 'Galpão Destino: GRU - Aeroporto SP'
     expect(page).to have_content 'Fornecedor: Fábrica de Chocolate LTDA'
     expect(page).to have_content 'Usuário Responsável: Thiago - thiago@email.com'
-    expect(page).to have_content 'Data de Entrega Prevista: 20/12/2022'
+    expect(page).to have_content 'Data Prevista de Entrega: 20/12/2022'
     expect(page).not_to have_content 'Cuiabá'
     expect(page).not_to have_content 'CWB'
   end
@@ -79,11 +79,11 @@ describe 'Usuário cadatra um pedido' do
     click_on 'Registrar Pedido'
     select 'GRU - Aeroporto SP', from: 'Galpão Destino'
     select supplier.corporate_name, from: 'Fornecedor'
-    fill_in 'Data de Entrega Prevista', with: ''
+    fill_in 'Data Prevista de Entrega', with: ''
     click_on 'Gravar'
 
     # Assert
     expect(page).to have_content 'Não foi possível registrar o pedido'
-    expect(page).to have_content 'Data de Entrega Prevista não pode ficar em branco'
+    expect(page).to have_content 'Data Prevista de Entrega não pode ficar em branco'
   end
 end
