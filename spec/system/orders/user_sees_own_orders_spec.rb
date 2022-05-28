@@ -26,9 +26,12 @@ describe 'Usuário vê seus próprios pedidos' do
       full_address: 'Do lado de minha casa, 14', city: 'Salvador', state: 'BA',
       email: 'contato@wonka.com', contact_number: '+557133224455'
     )
-    order1 = Order.create!(user: manoel, warehouse: warehouse1, supplier:, estimated_delivery_date: 1.day.from_now)
-    order2 = Order.create!(user: carla, warehouse: warehouse1, supplier:, estimated_delivery_date: 1.day.from_now)
-    order3 = Order.create!(user: manoel, warehouse: warehouse2, supplier:, estimated_delivery_date: 1.day.from_now)
+    order1 = Order.create!(user: manoel, warehouse: warehouse1, supplier:, estimated_delivery_date: 1.day.from_now,
+                           status: 'pending')
+    order2 = Order.create!(user: carla, warehouse: warehouse1, supplier:, estimated_delivery_date: 1.day.from_now,
+                           status: 'delivered')
+    order3 = Order.create!(user: manoel, warehouse: warehouse2, supplier:, estimated_delivery_date: 1.day.from_now,
+                           status: 'canceled')
 
     # Act
     login_as(manoel, scope: :user)
@@ -37,8 +40,11 @@ describe 'Usuário vê seus próprios pedidos' do
 
     # Assert
     expect(page).to have_content(order1.code)
+    expect(page).to have_content('Pendente')
     expect(page).not_to have_content(order2.code)
+    expect(page).not_to have_content('Entregue')
     expect(page).to have_content(order3.code)
+    expect(page).to have_content('Cancelado')
   end
 
   it 'e visita um pedido' do

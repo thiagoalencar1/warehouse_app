@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_order_and_check_user, only: %i[show edit update]
+  before_action :set_order_and_check_user, only: %i[show edit update delivered canceled]
 
   def index
     @orders = current_user.orders
@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user
     @order.save!
-    redirect_to @order, notice: 'Pedido registrado com sucesso.'
+    redirect_to @order, notice: 'Pedido registrado com sucesso.' if @order.save
   end
 
   def search
@@ -40,6 +40,16 @@ class OrdersController < ApplicationController
     )
     @order.update(order_params)
     redirect_to @order, notice: 'Pedido atualizado com sucesso.'
+  end
+
+  def delivered
+    @order.delivered!
+    redirect_to order_path(@order.id)
+  end
+
+  def canceled
+    @order.canceled!
+    redirect_to order_path(@order.id)
   end
 
   private

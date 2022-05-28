@@ -1,5 +1,5 @@
 <dl>
-  <dt><%= Order.human_attribute_name(:code) %></dt>:
+  <dt><%= Order.human_attribute_name(:code) %>:</dt>
   <dd><%= link_to order.code, order %></dd>
 
   <dt><%= Order.human_attribute_name(:warehouse_id) %>:</dt>
@@ -7,4 +7,7 @@
 
   <dt><%= Order.human_attribute_name(:supplier_id) %>:</dt>
   <dd><%= order.supplier.corporate_name %></dd>
+
+  <dt><%= Order.human_attribute_name(:status) %>:</dt>
+  <dd><%= I18n.t(order.status) %></dd>
 </dl>
