@@ -17,6 +17,11 @@
   <dd><%= I18n.localize(@order.estimated_delivery_date) %></dd>
 </dl>
 
+<h2>Itens do Pedido</h2>
+<% @order.order_items.each do |item| %>
+  <%= item.quantity %> x <%= item.product_model.name  %>
+<% end %>
+
 <% if @order.pending? %>
   <%= button_to 'Marcar como Entregue', delivered_order_path(@order.id) %>
   <%= button_to 'Marcar como Cancelado', canceled_order_path(@order.id) %>
