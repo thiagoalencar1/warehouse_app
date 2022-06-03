@@ -1,0 +1,15 @@
+<h1>Novo Item para o Pedido <%= @order.code %></h1>
+
+<%= form_with model: [@order, @order_item] do |item| %>
+  <div>
+    <%= item.label :product_model_id, 'Produto' %>
+    <%= item.collection_select :product_model_id, @products, :id, :name %>
+  </div>
+  <div>
+    <%= item.label :quantity, 'Quantidade' %>
+    <%= item.number_field :quantity %>
+  </div>
+  <div>
+    <%= item.submit 'Adicionar' %>
+  </div>
+<% end %>
