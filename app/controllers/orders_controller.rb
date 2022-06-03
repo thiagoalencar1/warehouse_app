@@ -42,6 +42,7 @@ class OrdersController < ApplicationController
     redirect_to @order, notice: 'Pedido atualizado com sucesso.'
   end
 
+  # criar um método 
   def delivered
     @order.delivered!
     @order.order_items.each do |item|
@@ -52,7 +53,7 @@ class OrdersController < ApplicationController
         )
       end
     end
-    
+
     redirect_to order_path(@order.id)
   end
 
