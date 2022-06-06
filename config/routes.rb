@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :warehouses, only: %i[show new create edit update destroy]
+  resources :warehouses, only: %i[show new create edit update destroy] do
+    resources :stock_products_destinations, only: %i[create]
+  end
   resources :suppliers, only: %i[index show new create edit update]
   resources :product_models, onyl: %i[index show new create]
 
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
     post 'delivered', on: :member
     post 'canceled', on: :member
   end
+
 end
